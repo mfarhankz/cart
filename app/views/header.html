@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="HeaderController">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{siteTitle.href}}" title="{{siteTitle.title}}">{{siteTitle.title}}</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search...">
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-repeat="nav in sidenavigation" ng-class="{ active: isActive('/'+ nav.href )}"><a href="#{{nav.href}}" title="{{nav.title}}">{{nav.title}}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
