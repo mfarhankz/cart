@@ -22,9 +22,11 @@
             $scope.guitarVariable = data[0].products;
         });
     })
-    .controller('detailCtrl',function($scope,$http){
+    .controller('detailCtrl',function($scope,$http, $location){
+        var current = $location.$$path.split('/')[2];
         $http.get('app/data.json').success (function(data){
             $scope.guitarVariable = data[0].products;
+            console.log(data[0].products);
         });
     })
 
@@ -50,6 +52,11 @@
                     templateUrl: 'app/views/list.html',
                     controller: 'ListController'
                 }).
+                when('/javascript/:id', {
+                    templateUrl: 'app/views/detail.html',
+                    controller: 'detailCtrl'
+                }).
+
                 when('/backbone-js', {
                     templateUrl: 'app/views/list.html',
                     controller: 'ListControllerTow'
@@ -61,10 +68,6 @@
                 when('/node-js', {
                     templateUrl: 'app/views/list.html',
                     controller: 'ListControllerFour'
-                }).
-                when('/javascript/b01', {
-                    templateUrl: 'app/views/detail.html',
-                    controller: 'detailCtrl'
                 }).
                 otherwise({
                     redirectTo: '/javascript'
