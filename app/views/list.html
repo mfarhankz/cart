@@ -1,0 +1,15 @@
+<div class="col-sm-6 col-md-3 small-padding" ng-repeat="list in guitarVariable">
+    <div class="thumbnail">
+        <img ng-src="app/images/{{list.images.thumb}}.jpg" alt="...">
+        <div class="caption">
+            <span class="label label-info">{{list.price | currency:$}}</span>
+            <h3>{{list.name  | limitTo : 18}}</h3>
+            <p>{{list.shortDescription | limitTo : 50}}</p>
+            <p>
+                <a href="" class="btn btn-primary" role="button">Add to Cart</a>
+                <a href="#/{{list.category}}/{{list.productId}}" class="btn btn-default" role="button">View Detail</a>
+            </p>
+        </div>
+
+    </div>
+</div>

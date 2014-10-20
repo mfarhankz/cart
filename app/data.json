@@ -1,0 +1,80 @@
+[
+    {
+        "siteTitle" :{
+            "title":"Angular Shopping Store",
+            "href": "/cart"
+        },
+        "nav" : [
+            {
+                "title": "JavaScript",
+                "href": "javascript"
+            },
+            {
+                "title": "Backbone Js",
+                "href": "backbone-js"
+            },
+            {
+                "title": "Angular Js",
+                "href": "angular-js"
+            },
+            {
+                "title": "Node Js",
+                "href": "node-js"
+            }
+        ],
+        "topNav" : [
+            {
+                "title": "Dashboard",
+                "href": ""
+            },
+            {
+                "title": "Settings",
+                "href": ""
+            },
+            {
+                "title": "Profile",
+                "href": ""
+            },
+            {
+                "title": "Help",
+                "href": ""
+            }
+        ],
+        "products": [
+            {
+                "productId" : "b01",
+                "name" 		 : "Electric Guitar",
+                "shortDescription" : "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
+                "fullDescription": "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
+                "price" : "18.34",
+                "images"	:  {
+                    "full" : [
+                        "product","product","product","product","product"
+                    ],
+                    "thumb" : "product"
+                },
+                "ratting" : "5",
+                "inStock" : "10",
+                "category" : "javascript",
+                "featureProduct" : "false"
+            },
+            {
+                "productId" : "b02",
+                "name" 		 : "Electric Guitar",
+                "shortDescription" : "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
+                "fullDescription": "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
+                "price" : "18.34",
+                "images"	:  {
+                    "full" : [
+                        "product","product","product","product","product"
+                    ],
+                    "thumb" : "product"
+                },
+                "ratting" : "5",
+                "inStock" : "10",
+                "category" : "angular-js",
+                "featureProduct" : "true"
+            }
+        ]
+    }
+]
