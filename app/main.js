@@ -1,32 +1,73 @@
 (function(){
-    angular.module('ShoppingCart', ['ngRoute'])
+    angular.module('ShoppingCart', ['ui.router'])
 
-    .controller('ListController',function($scope,$http){
+    .controller('JavaScript',function($scope,$http,$location){
         $http.get('app/data.json').success (function(data){
-            $scope.guitarVariable = data[0].products;
+            var cat = $location.$$path.split('/')[1];
+            var result = [];
+            var current;
+            for(var i = 0; i < data[0].products.length; i++){
+                current = data[0].products[i];
+                if(current.category === cat){
+                    result.push(current);
+                }
+            }
+            $scope.BookStore = result;
         });
     })
-    .controller('ListControllerTow',function($scope,$http){
+    .controller('BackboneJs',function($scope,$http,$location){
         $http.get('app/data.json').success (function(data){
-            $scope.guitarVariable = data[0].products;
-        });
-    })
+            var cat = $location.$$path.split('/')[1];
+            var result = [];
+            var current;
+            for(var i = 0; i < data[0].products.length; i++){
+                current = data[0].products[i];
+                if(current.category === cat){
+                    result.push(current);
+                }
+            }
+            $scope.BookStore = result;
 
-    .controller('ListControllerThree',function($scope,$http){
-        $http.get('app/data.json').success (function(data){
-            $scope.guitarVariable = data[0].products;
         });
     })
-    .controller('ListControllerFour',function($scope,$http){
+    .controller('AngularJs',function($scope,$http,$location){
         $http.get('app/data.json').success (function(data){
-            $scope.guitarVariable = data[0].products;
+            var cat = $location.$$path.split('/')[1];
+            var result = [];
+            var current;
+            for(var i = 0; i < data[0].products.length; i++){
+                current = data[0].products[i];
+                if(current.category === cat){
+                    result.push(current);
+                }
+            }
+            $scope.BookStore = result;
         });
     })
-    .controller('detailCtrl',function($scope,$http, $location){
-        var current = $location.$$path.split('/')[2];
+    .controller('NodeJs',function($scope,$http,$location){
         $http.get('app/data.json').success (function(data){
-            $scope.guitarVariable = data[0].products;
-            console.log(data[0].products);
+            var cat = $location.$$path.split('/')[1];
+            var result = [];
+            var current;
+            for(var i = 0; i < data[0].products.length; i++){
+                current = data[0].products[i];
+                if(current.category === cat){
+                    result.push(current);
+                }
+            }
+            $scope.BookStore = result;
+        });
+    })
+    .controller('detailCtrl',function($scope,$http,$location){
+        $http.get('app/data.json').success (function(data){
+            var id = $location.$$path.split('/')[2];
+            var current;
+            for(var i = 0; i < data[0].products.length; i++){
+                current = data[0].products[i];
+                if(current.productId === id){
+                    $scope.book = current;
+                }
+            }
         });
     })
 
@@ -45,33 +86,53 @@
         };
      })
 
-    .config(['$routeProvider',
-        function($routeProvider) {
-            $routeProvider.
-                when('/javascript', {
-                    templateUrl: 'app/views/list.html',
-                    controller: 'ListController'
-                }).
-                when('/javascript/:id', {
-                    templateUrl: 'app/views/detail.html',
-                    controller: 'detailCtrl'
-                }).
+    .config(['$stateProvider','$urlRouterProvider','$locationProvider',
+        function($stateProvider, $urlRouterProvider, $locationProvider) {
+            //$locationProvider.html5Mode(true);
+            $urlRouterProvider.otherwise('/javascript');
+            $stateProvider
+            .state('JavaScript', {
+                url: '/javascript',
+                templateUrl: 'app/views/list.html',
+                controller: 'JavaScript'
+            })
+            .state('Backbone Js', {
+                url: '/backbone-js',
+                templateUrl: 'app/views/list.html',
+                controller: 'BackboneJs'
+            })
+            .state('Angular Js', {
+                url: '/angular-js',
+                templateUrl: 'app/views/list.html',
+                controller: 'AngularJs'
+            })
+            .state('Node Js', {
+                url: '/node-js',
+                templateUrl: 'app/views/list.html',
+                controller: 'NodeJs'
+            })
+            .state('JavaScriptDetail', {
+                url: '/javascript/:id',
+                templateUrl: 'app/views/detail.html',
+                controller: 'detailCtrl'
+            })
+            .state('BackboneDetail', {
+                url: '/backbone-js/:id',
+                templateUrl: 'app/views/detail.html',
+                controller: 'detailCtrl'
+            })
+            .state('AngularDetail', {
+                url: '/angular-js/:id',
+                templateUrl: 'app/views/detail.html',
+                controller: 'detailCtrl'
+            })
+            .state('NodeJsDetail', {
+                url: '/node-js/:id',
+                templateUrl: 'app/views/detail.html',
+                controller: 'detailCtrl'
+            })
 
-                when('/backbone-js', {
-                    templateUrl: 'app/views/list.html',
-                    controller: 'ListControllerTow'
-                }).
-                when('/angular-js', {
-                    templateUrl: 'app/views/list.html',
-                    controller: 'ListControllerThree'
-                }).
-                when('/node-js', {
-                    templateUrl: 'app/views/list.html',
-                    controller: 'ListControllerFour'
-                }).
-                otherwise({
-                    redirectTo: '/javascript'
-                });
-        }]);
+    }]);
+
 
 })();
