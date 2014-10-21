@@ -1,15 +1,17 @@
-<div class="col-sm-6 col-md-3 small-padding" ng-repeat="book in BookStore">
-    <div class="thumbnail">
-        <img ng-src="app/images/{{book.images.thumb}}.jpg" alt="...">
-        <div class="caption">
-            <span class="label label-info">{{book.price | currency:$}}</span>
-            <h3>{{book.name  | limitTo : 18}}</h3>
-            <p>{{book.shortDescription | limitTo : 50}}</p>
-            <p>
-                <a href="" class="btn btn-primary" role="button">Add to Cart</a>
-                <a href="#/{{book.category}}/{{book.productId}}" class="btn btn-default" role="button">View Detail</a>
-            </p>
+<h1 class="page-header">{{BookStore[0].categoryName}}</h1>
+<div class="row placeholders">
+    <div class="col-sm-6 col-md-3 small-padding" ng-repeat="book in BookStore">
+        <div class="thumbnail">
+            <img ng-src="app/images/{{book.images.thumb}}" alt="...">
+            <div class="caption">
+                <span class="label label-info">{{book.price | currency:$}}</span>
+                <h3>{{book.name  | limitTo : 18}}</h3>
+                <p>{{book.shortDescription | limitTo : 50}}</p>
+                <p>
+                    <a href="" class="btn btn-primary" role="button">Add to Cart</a>
+                    <a href="#/{{book.category}}/{{book.productId}}" class="btn btn-default detail" role="button">View Detail</a>
+                </p>
+            </div>
         </div>
-
     </div>
 </div>

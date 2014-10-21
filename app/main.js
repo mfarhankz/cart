@@ -1,6 +1,22 @@
 (function(){
     angular.module('ShoppingCart', ['ui.router'])
 
+    .controller('FeatureProduct',function($scope,$http,$location){
+        $http.get('app/data.json').success (function(data){
+            var result = [];
+            var current;
+            for(var i = 0; i < data[0].products.length; i++){
+                current = data[0].products[i];
+                if(current.featureProduct === true){
+                    result.push(current);
+                }
+            }
+
+            $scope.BookStore = result;
+            $scope.BookStore[0].categoryName = 'Featured';
+
+        });
+    })
     .controller('JavaScript',function($scope,$http,$location){
         $http.get('app/data.json').success (function(data){
             var cat = $location.$$path.split('/')[1];
@@ -68,6 +84,28 @@
                     $scope.book = current;
                 }
             }
+
+            var cat = $location.$$path.split('/')[1];
+            var result = [];
+            var currentCat;
+            for(var i = 0; i < data[0].products.length; i++){
+                currentCat = data[0].products[i];
+                if(currentCat.category === cat){
+                    result.push(currentCat);
+                }
+            }
+            $scope.BookStore = result;
+
+             setTimeout(function(){
+                 $("#slider").owlCarousel({
+                     navigation : true,
+                     slideSpeed : 300,
+                     paginationSpeed : 400,
+                     singleItem:true
+                 });
+             },50);
+
+
         });
     })
 
@@ -89,8 +127,13 @@
     .config(['$stateProvider','$urlRouterProvider','$locationProvider',
         function($stateProvider, $urlRouterProvider, $locationProvider) {
             //$locationProvider.html5Mode(true);
-            $urlRouterProvider.otherwise('/javascript');
+            $urlRouterProvider.otherwise('/feature');
             $stateProvider
+            .state('FeatureProduct', {
+                url: '/featured',
+                templateUrl: 'app/views/list.html',
+                controller: 'FeatureProduct'
+            })
             .state('JavaScript', {
                 url: '/javascript',
                 templateUrl: 'app/views/list.html',
@@ -133,6 +176,7 @@
             })
 
     }]);
+
 
 
 })();

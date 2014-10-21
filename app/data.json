@@ -6,6 +6,10 @@
         },
         "nav" : [
             {
+                "title": "Featured",
+                "href": "featured"
+            },
+            {
                 "title": "JavaScript",
                 "href": "javascript"
             },
@@ -28,66 +32,121 @@
                 "href": ""
             },
             {
-                "title": "Settings",
+                "title": "My Account",
                 "href": ""
             },
             {
-                "title": "Profile",
+                "title": "Wishlist",
                 "href": ""
             },
             {
-                "title": "Help",
+                "title": "Checkout",
+                "href": ""
+            },
+            {
+                "title":"0 item(s) - $0.00",
                 "href": ""
             }
+
         ],
         "products": [
             {
                 "productId" : "b01",
                 "name" 		 : "JavaScript / jQuery",
                 "shortDescription" : "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
-                "fullDescription": "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
+                "fullDescription": "The Corsair Gaming Series GS600 power supply is the ideal price-performance solution for building or upgrading a Gaming PC. A single +12V rail provides up to 48A of reliable, continuous power for multi-core gaming PCs with multiple graphics cards. The ultra-quiet, dual ball-bearing fan automatically adjusts its speed according to temperature, so it will never intrude on your music and games. Blue LEDs bathe the transparent fan blades in a cool glow. Not feeling blue? You can turn off the lighting with the press of a button.",
                 "price" : "18.34",
                 "images"	:  {
                     "full" : [
-                        "product","product","product","product","product"
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        }
                     ],
-                    "thumb" : "product"
+                    "thumb" : "product.jpg"
                 },
                 "ratting" : "5",
                 "inStock" : "10",
-                "categoryName" : "JavaScript",
-                "category" : "javascript",
-                "featureProduct" : "false"
+                "category" : {
+                    "title":[
+                        "JavaScript",
+                        "Featured"
+                    ],
+                    "url":[
+                        "javascript",
+                        "featured"
+                    ]
+                },
+                "featureProduct" : false
             },
             {
                 "productId" : "b02",
                 "name" 		 : "Angular / ui-route",
                 "shortDescription" : "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
-                "fullDescription": "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
+                "fullDescription": "The Corsair Gaming Series GS600 power supply is the ideal price-performance solution for building or upgrading a Gaming PC. A single +12V rail provides up to 48A of reliable, continuous power for multi-core gaming PCs with multiple graphics cards. The ultra-quiet, dual ball-bearing fan automatically adjusts its speed according to temperature, so it will never intrude on your music and games. Blue LEDs bathe the transparent fan blades in a cool glow. Not feeling blue? You can turn off the lighting with the press of a button.",
                 "price" : "18.34",
                 "images"	:  {
                     "full" : [
-                        "product","product","product","product","product"
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        }
                     ],
-                    "thumb" : "product"
+                    "thumb" : "product.jpg"
                 },
                 "ratting" : "5",
                 "inStock" : "10",
                 "categoryName" : "Angular Js",
                 "category" : "angular-js",
-                "featureProduct" : "true"
+                "featureProduct" : true
             },
             {
                 "productId" : "b03",
                 "name" 		 : "Backbone / $Paths",
                 "shortDescription" : "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
-                "fullDescription": "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
+                "fullDescription": "The Corsair Gaming Series GS600 power supply is the ideal price-performance solution for building or upgrading a Gaming PC. A single +12V rail provides up to 48A of reliable, continuous power for multi-core gaming PCs with multiple graphics cards. The ultra-quiet, dual ball-bearing fan automatically adjusts its speed according to temperature, so it will never intrude on your music and games. Blue LEDs bathe the transparent fan blades in a cool glow. Not feeling blue? You can turn off the lighting with the press of a button.",
                 "price" : "18.34",
                 "images"	:  {
                     "full" : [
-                        "product","product","product","product","product"
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        }
                     ],
-                    "thumb" : "product"
+                    "thumb" : "product.jpg"
                 },
                 "ratting" : "5",
                 "inStock" : "10",
@@ -99,91 +158,161 @@
                 "productId" : "b04",
                 "name" 		 : "Node / Documentation",
                 "shortDescription" : "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
-                "fullDescription": "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
+                "fullDescription": "The Corsair Gaming Series GS600 power supply is the ideal price-performance solution for building or upgrading a Gaming PC. A single +12V rail provides up to 48A of reliable, continuous power for multi-core gaming PCs with multiple graphics cards. The ultra-quiet, dual ball-bearing fan automatically adjusts its speed according to temperature, so it will never intrude on your music and games. Blue LEDs bathe the transparent fan blades in a cool glow. Not feeling blue? You can turn off the lighting with the press of a button.",
                 "price" : "18.34",
                 "images"	:  {
                     "full" : [
-                        "product","product","product","product","product"
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        }
                     ],
-                    "thumb" : "product"
+                    "thumb" : "product.jpg"
                 },
                 "ratting" : "5",
                 "inStock" : "10",
                 "categoryName" : "Node Js",
                 "category" : "node-js",
-                "featureProduct" : "false"
+                "featureProduct" : false
             },
             {
                 "productId" : "b05",
                 "name" 		 : "Angular / Route",
                 "shortDescription" : "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
-                "fullDescription": "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
+                "fullDescription": "The Corsair Gaming Series GS600 power supply is the ideal price-performance solution for building or upgrading a Gaming PC. A single +12V rail provides up to 48A of reliable, continuous power for multi-core gaming PCs with multiple graphics cards. The ultra-quiet, dual ball-bearing fan automatically adjusts its speed according to temperature, so it will never intrude on your music and games. Blue LEDs bathe the transparent fan blades in a cool glow. Not feeling blue? You can turn off the lighting with the press of a button.",
                 "price" : "18.34",
                 "images"	:  {
                     "full" : [
-                        "product","product","product","product","product"
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        }
                     ],
-                    "thumb" : "product"
+                    "thumb" : "product.jpg"
                 },
                 "ratting" : "5",
                 "inStock" : "10",
                 "categoryName" : "Angular Js",
                 "category" : "angular-js",
-                "featureProduct" : "true"
+                "featureProduct" : true
             },
             {
                 "productId" : "b06",
                 "name" 		 : "Node / json",
                 "shortDescription" : "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
-                "fullDescription": "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
+                "fullDescription": "The Corsair Gaming Series GS600 power supply is the ideal price-performance solution for building or upgrading a Gaming PC. A single +12V rail provides up to 48A of reliable, continuous power for multi-core gaming PCs with multiple graphics cards. The ultra-quiet, dual ball-bearing fan automatically adjusts its speed according to temperature, so it will never intrude on your music and games. Blue LEDs bathe the transparent fan blades in a cool glow. Not feeling blue? You can turn off the lighting with the press of a button.",
                 "price" : "18.34",
                 "images"	:  {
                     "full" : [
-                        "product","product","product","product","product"
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        }
                     ],
-                    "thumb" : "product"
+                    "thumb" : "product.jpg"
                 },
                 "ratting" : "5",
                 "inStock" : "10",
                 "categoryName" : "Node Js",
                 "category" : "node-js",
-                "featureProduct" : "true"
+                "featureProduct" : true
             },
             {
                 "productId" : "b07",
                 "name" 		 : "JavaScript / Backbone",
                 "shortDescription" : "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
-                "fullDescription": "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
+                "fullDescription": "The Corsair Gaming Series GS600 power supply is the ideal price-performance solution for building or upgrading a Gaming PC. A single +12V rail provides up to 48A of reliable, continuous power for multi-core gaming PCs with multiple graphics cards. The ultra-quiet, dual ball-bearing fan automatically adjusts its speed according to temperature, so it will never intrude on your music and games. Blue LEDs bathe the transparent fan blades in a cool glow. Not feeling blue? You can turn off the lighting with the press of a button.",
                 "price" : "18.34",
                 "images"	:  {
                     "full" : [
-                        "product","product","product","product","product"
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        }
                     ],
-                    "thumb" : "product"
+                    "thumb" : "product.jpg"
                 },
                 "ratting" : "5",
                 "inStock" : "10",
                 "categoryName" : "JavaScript",
                 "category" : "javascript",
-                "featureProduct" : "false"
+                "featureProduct" : true
             },
             {
                 "productId" : "b08",
                 "name" 		 : "JavaScript / Angular",
                 "shortDescription" : "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
-                "fullDescription": "Ever-popular solid-body guitars, to hollow-body guitars and archtops.",
+                "fullDescription": "The Corsair Gaming Series GS600 power supply is the ideal price-performance solution for building or upgrading a Gaming PC. A single +12V rail provides up to 48A of reliable, continuous power for multi-core gaming PCs with multiple graphics cards. The ultra-quiet, dual ball-bearing fan automatically adjusts its speed according to temperature, so it will never intrude on your music and games. Blue LEDs bathe the transparent fan blades in a cool glow. Not feeling blue? You can turn off the lighting with the press of a button.",
                 "price" : "18.34",
                 "images"	:  {
                     "full" : [
-                        "product","product","product","product","product"
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        },
+                        {
+                            "img":"product.jpg"
+                        }
                     ],
-                    "thumb" : "product"
+                    "thumb" : "product.jpg"
                 },
                 "ratting" : "5",
                 "inStock" : "10",
                 "categoryName" : "JavaScript",
                 "category" : "javascript",
-                "featureProduct" : "false"
+                "featureProduct" : false
             }
         ]
     }

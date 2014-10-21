@@ -1,13 +1,84 @@
-<div class="col-sm-6 col-md-3 small-padding">
-    <div class="thumbnail">
-        <div class="caption">
-            <span class="label label-info">{{book.price | currency:$}}</span>
-            <h3>{{book.name  | limitTo : 18}}</h3>
-            <p>{{book.shortDescription | limitTo : 50}}</p>
-            <p>
-                <a href="" class="btn btn-primary" role="button">Add to Cart</a>
-            </p>
+<h1 class="page-header">{{book.name}}</h1>
+<div class="row">
+    <div class="col-sm-6 col-md-5 small-padding">
+        <div class="thumbnail owl-carousel owl-theme" id="slider">
+            <img ng-repeat="img in book.images.full" ng-src="app/images/{{img.img}}" alt="" width="100%">
         </div>
-
     </div>
+    <div class="col-md-7">
+        <div class="product-title">{{book.name}}</div>
+        <div class="product-desc">{{book.shortDescription}}</div>
+        <div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
+        <hr>
+        <div class="product-price">{{book.price | currency:$}}</div>
+        <div class="product-stock">In Stock</div>
+        <hr>
+        <div class="btn-group cart">
+            <button type="button" class="btn btn-success">
+                Add to cart
+            </button>
+        </div>
+        <div class="btn-group wishlist">
+            <button type="button" class="btn btn-danger">
+                Add to wishlist
+            </button>
+        </div>
+    </div>
+
 </div>
+<br/>
+<br/>
+<section ng-init="tab=1" class="row">
+    <ul class="nav nav-tabs" role="tablist">
+        <li ng-class="{active:tab === 1}"><a href="" ng-click="tab = 1">Description</a></li>
+        <li ng-class="{active:tab === 2}"><a href="" ng-click="tab = 2">Product Info</a></li>
+        <li ng-class="{active:tab === 3}"><a href="" ng-click="tab = 3">Reviews</a></li>
+    </ul>
+    <br/>
+    <div class="col-md-12 page-header">
+        <div class="bs-callout bs-callout-danger" ng-if="tab === 1">
+            <p>{{book.fullDescription}}</p>
+        </div>
+        <div class="bs-callout bs-callout-danger" ng-if="tab === 2">
+            <p>hi</p>
+        </div>
+        <div class="bs-callout bs-callout-danger" ng-if="tab === 3">
+            <form class="navbar-form navbar-left" role="search">
+                <ul class="media-list">
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="app/images/post.jpg" alt="...">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">Media heading</h4>
+                            <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                        </div>
+                    </li>
+                </ul>
+                <input type="text" class="form-control" placeholder="Search">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+<br/>
+<br/>
+<section ng-if="BookStore">
+    <h1 class="page-header">Similar Matches</h1>
+    <div class="row placeholders">
+        <div class="col-sm-6 col-md-3 small-padding" ng-repeat="book in BookStore">
+            <div class="thumbnail">
+                <img ng-src="app/images/{{book.images.thumb}}" alt="...">
+                <div class="caption">
+                    <span class="label label-info">{{book.price | currency:$}}</span>
+                    <h3>{{book.name  | limitTo : 18}}</h3>
+                    <p>{{book.shortDescription | limitTo : 50}}</p>
+                    <p>
+                        <a href="" class="btn btn-primary" role="button">Add to Cart</a>
+                        <a href="#/{{book.category}}/{{book.productId}}" class="btn btn-default detail" role="button">View Detail</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
