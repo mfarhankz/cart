@@ -7,8 +7,8 @@
                 <span class="label label-info">{{book.price | currency:$}}</span>
                 <h3>{{book.name  | limitTo : 18}}</h3>
                 <p>{{book.shortDescription | limitTo : 50}}</p>
-                <p>
-                    <a href="" class="btn btn-primary" role="button">Add to Cart</a>
+                <p ng-controller="AddToCart">
+                    <a href="" ng-click="addCart(book.productId)" class="btn btn-primary" role="button">Add to Cart</a>
                     <a href="#/{{book.category}}/{{book.productId}}" class="btn btn-default detail" role="button">View Detail</a>
                 </p>
             </div>

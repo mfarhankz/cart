@@ -1,21 +1,26 @@
 (function(){
     angular.module('ShoppingCart', ['ui.router'])
 
-    .controller('FeatureProduct',function($scope,$http,$location){
-        $http.get('app/data.json').success (function(data){
-            var result = [];
-            var current;
-            for(var i = 0; i < data[0].products.length; i++){
-                current = data[0].products[i];
-                if(current.featureProduct === true){
-                    result.push(current);
+    .controller('FeatureProduct',function($scope,getDataToJson,$location){
+            getDataToJson.getData('app/data.json',function(data){
+                var result = [];
+                var current;
+                for(var i = 0; i < data[0].products.length; i++){
+                    current = data[0].products[i];
+                    if(current.featureProduct === true){
+                        result.push(current);
+                    }
                 }
+                $scope.BookStore = result;
+                $scope.BookStore[0].categoryName = 'Featured';
+            });
+    })
+    .service('getDataToJson', function($http){
+        return {
+            getData: function(url,callBack){
+                $http.get(url).success(callBack);
             }
-
-            $scope.BookStore = result;
-            $scope.BookStore[0].categoryName = 'Featured';
-
-        });
+        }
     })
     .controller('JavaScript',function($scope,$http,$location){
         $http.get('app/data.json').success (function(data){
@@ -109,6 +114,7 @@
         });
     })
 
+
     .controller('HeaderController',function($scope, $location, $http){
         $http.get('app/data.json').success (function(data){
             $scope.siteTitle = data[0].siteTitle;
@@ -123,6 +129,26 @@
             return viewLocation === $location.path();
         };
      })
+
+    .value('cart', [])
+
+        .controller('AddToCart', function($scope,getDataToJson, cart){
+            getDataToJson.getData('app/data.json',function(data){
+                $scope.addCart = (function(id){
+                    cart.push({id:id});
+                    var result = [];
+                    var current;
+                    for(var i = 0; i < data[0].products.length; i++){
+                        current = data[0].products[i];
+                        if(current.productId === id){
+                            result.push(current);
+                        }
+                    }
+                    $scope.cartValue = result;
+                    console.log($scope.cartValue[0].price, $scope.cartValue[0].productId);
+                });
+            });
+        })
 
     .config(['$stateProvider','$urlRouterProvider','$locationProvider',
         function($stateProvider, $urlRouterProvider, $locationProvider) {

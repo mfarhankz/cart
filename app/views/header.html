@@ -15,6 +15,11 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li ng-repeat="nav in sidenavigation" ng-class="{ active: isActive('/'+ nav.href )}"><a href="#{{nav.href}}" title="{{nav.title}}">{{nav.title}}</a></li>
+                <li ng-controller="AddToCart">
+                    <a href="#" title="0 item(s) - $0.00" class="ng-binding" ng-repeat="cart in cartValue">
+                        {{cartValue[0].price}} item(s) - {{cartValue[0].price | currency:$}}
+                    </a>
+                </li>
             </ul>
 
         </div>
