@@ -114,6 +114,7 @@
         };
      })
     .value('cart', [])
+
     .controller('AddToCart', function($scope,getDataToJson, cart){
         getDataToJson.getData('app/data.json',function(data){
             var current;
@@ -124,6 +125,7 @@
                         cart.push(current);
                     }
                 }
+                console.log(cart);
             });
         });
     })
